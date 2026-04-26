@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author muhammad.khadafi
@@ -16,4 +17,5 @@ public interface StudentCourseRepository extends JpaRepository<StudentCourse, Lo
     @Query("SELECT sc FROM StudentCourse sc JOIN FETCH sc.student JOIN FETCH sc.course")
     List<StudentCourse> findAllWithStudentAndCourse();
     List<StudentCourse> findByStudentId(Long studentId);
+
 }
